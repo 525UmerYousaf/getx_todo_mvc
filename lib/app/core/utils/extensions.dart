@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 //  & width responsive based on different device sizes.
 extension PercentSized on double {
   double get hp => (Get.height * (this / 100));
-  double get hw => (Get.width * (this / 100));
+  double get wp => (Get.width * (this / 100));
 }
 
 extension ResponsiveText on double {

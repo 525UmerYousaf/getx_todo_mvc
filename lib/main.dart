@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import './app/modules/home/view.dart';
+import './app/modules/home/binding.dart';
 import './app/data/services/storage/services.dart';
 
 void main() async {
@@ -19,7 +21,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Todo List using GetX',
-      home: HomePage(),
+      debugShowCheckedModeBanner: false,
+      home: const HomePage(),
+      initialBinding: HomeBinding(),
+      //  I want to show toast either when operation
+      //  success or when operation fail therefore,
+      //  i'm using package "flutter_easyloading" here.
+      builder: EasyLoading.init(),
     );
   }
 }
